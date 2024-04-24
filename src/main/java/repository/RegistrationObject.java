@@ -1,11 +1,11 @@
 package repository;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface RegistrationObject<ID,T> {
     void add(T value);
-    void update(ID key,T value);
+    void update(ID key, T value);
     void delete(ID key);
     T get(ID key);
-    List<T> findAll();
+    Collection<T> findAll();
 }

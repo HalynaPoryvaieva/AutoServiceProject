@@ -2,8 +2,8 @@ package repository;
 
 import entity.Client;
 
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ClientRegistrationRepository implements RegistrationObject<Integer, Client> {
@@ -13,30 +13,36 @@ public class ClientRegistrationRepository implements RegistrationObject<Integer,
         clientMap=new HashMap<>();
     }
 
-//TODO all method
     @Override
     public void add(Client value) {
-
+        clientMap.put(value.getIdClient(), value);
     }
 
     @Override
     public void update(Integer key, Client value) {
+        clientMap.compute(value.getIdClient(), (idCar,newClient) -> {
+            if (newClient != null) {
+                return value;
+            } else {
+                return value;
+            }
+        });
 
     }
 
     @Override
     public void delete(Integer key) {
-
+        clientMap.remove(key);
     }
 
     @Override
     public Client get(Integer key) {
-        return null;
+        return clientMap.get(key);
     }
 
     @Override
-    public List<Client> findAll() {
-        return null;
+    public Collection<Client> findAll() {
+        return clientMap.values();
     }
 }
 

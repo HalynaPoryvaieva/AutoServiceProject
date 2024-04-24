@@ -50,6 +50,30 @@ public class Client {
         return idClient;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
+    public void setAdrsse(String adrsse) {
+        this.adrsse = adrsse;
+    }
+
+    public void setDateRegistrationClient(int dateRegistrationClient) {
+        this.dateRegistrationClient = dateRegistrationClient;
+    }
+
+    public void setIdClient(int idClient) {
+        this.idClient = idClient;
+    }
+
     @Override
     public String toString() {
         return "Client{" +

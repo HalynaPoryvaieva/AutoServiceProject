@@ -42,6 +42,30 @@ public class Car {
         return idCar++;
     }
 
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setYearOfIssue(int yearOfIssue) {
+        this.yearOfIssue = yearOfIssue;
+    }
+
+    public void setVINcode(String VINcode) {
+        this.VINcode = VINcode;
+    }
+
+    public void setDateRegistrationCar(int dateRegistrationCar) {
+        this.dateRegistrationCar = dateRegistrationCar;
+    }
+
+    public void setIdCar(int idCar) {
+        this.idCar = idCar;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
