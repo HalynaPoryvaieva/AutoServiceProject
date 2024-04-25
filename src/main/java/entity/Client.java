@@ -4,26 +4,18 @@ public class Client {
     private String name;
     private String surname;
     private int phone;
-    private String adrsse;
+    private String adresse;
     private int dateRegistrationClient;
     private int idClient;
     private static int idClientCounter=0;
 
-    public Client(String name, String surname, int phone, String adrsse, int dateRegistration, int idClient) {
+    public Client(String name, String surname, int phone, String adresse, int dateRegistrationClient) {
         this.name = name;
         this.surname = surname;
         this.phone = phone;
-        this.adrsse = adrsse;
-        this.dateRegistrationClient = getDateRegistrationClient();
-        this.idClient = ++idClient;
-    }
-
-    public void update(String name,String surname,int phone,String adrsse,int dateRegistration){
-        this.name = name;
-        this.surname = surname;
-        this.phone = phone;
-        this.adrsse = adrsse;
+        this.adresse = adresse;
         this.dateRegistrationClient = dateRegistrationClient;
+        this.idClient=++ idClientCounter;
     }
 
     public String getName() {
@@ -39,7 +31,7 @@ public class Client {
     }
 
     public String getAdrsse() {
-        return adrsse;
+        return adresse;
     }
 
     public int getDateRegistrationClient() {
@@ -63,7 +55,7 @@ public class Client {
     }
 
     public void setAdrsse(String adrsse) {
-        this.adrsse = adrsse;
+        this.adresse = adrsse;
     }
 
     public void setDateRegistrationClient(int dateRegistrationClient) {
@@ -80,7 +72,7 @@ public class Client {
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", phone=" + phone +
-                ", adrsse='" + adrsse + '\'' +
+                ", adrsse='" + adresse + '\'' +
                 ", dateRegistration=" + dateRegistrationClient +
                 ", idClient=" + idClient +
                 '}';
