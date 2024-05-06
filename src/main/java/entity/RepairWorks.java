@@ -32,7 +32,7 @@ public class RepairWorks {
         return timeExecution;
     }
 
-    public double getPrice() {
+    public double getPriceRepairWorks() {
         return priceRepairWorks;
     }
 

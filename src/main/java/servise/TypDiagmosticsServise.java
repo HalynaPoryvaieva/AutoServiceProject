@@ -10,15 +10,15 @@ public class TypDiagmosticsServise  {
         this.repository = repository;
     }
 
-    public void add(int numberDiagnostics,String typDiagnostics,double price){
-        TypDiagnostics typDiagnostics1=new TypDiagnostics(numberDiagnostics,typDiagnostics,price);
+    public void add(int numberDiagnostics,String typDiagnostics,double priceTypDiagnostics){
+        TypDiagnostics typDiagnostics1=new TypDiagnostics(numberDiagnostics,typDiagnostics,priceTypDiagnostics);
         repository.add(typDiagnostics1);
     }
 
-    public boolean update(int idNumberDiagnostics,String typDiagnostics,double price){
+    public boolean update(int idNumberDiagnostics,String typDiagnostics,double priceTypDiagnostics){
         TypDiagnostics newTypDiagnostics = repository.get(idNumberDiagnostics);
         if (newTypDiagnostics != null) {
-            newTypDiagnostics.update(typDiagnostics,price);
+            newTypDiagnostics.update(typDiagnostics,priceTypDiagnostics);
             return true;
         }
         return false;
@@ -33,8 +33,8 @@ public class TypDiagmosticsServise  {
         return false;
     }
 
-    public TypDiagnostics get(int numberDiagnosticsn){
-        return  repository.get(numberDiagnosticsn);
+    public TypDiagnostics get(int numberDiagnostics){
+        return  repository.get(numberDiagnostics);
     }
 
     public void findAll(){

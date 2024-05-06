@@ -1,7 +1,6 @@
 package servise;
 
 import entity.*;
-import repository.ClientRepository;
 import repository.OrderRepository;
 
 import java.util.List;
@@ -42,13 +41,17 @@ public class OrderServise {
         return orderRepository.findAll().stream().toList();
     }
 
-    public void addOderTypDiagnostics(Order order,int numberDiagnostics,TypDiagnostics typDiagnostics){
+    public void addOderTypDiagnostics(Order order,int numberDiagnostics,List<TypDiagnostics> typDiagnostics){
         order.addTypDiagnostics(typDiagnostics);
     }
 
     public void addOrderRepairWorks(Order order,int numberRepairWorks,List<RepairWorks> works){
         order.addRepairWorks(works);
+
     }
+    public void print() {
+        orderRepository.findAll().forEach(System.out::println);
+        }
 
     public void PaymentData(int priceTypDiagnostics, int priceRepairWorks) {
 
@@ -71,6 +74,11 @@ public class OrderServise {
             return false;
         }
     }
+
+    public void addOrderRepairWorks(Order order, int numberRepairWorks) {
+        order.addRepairWorks(numberRepairWorks);
+    }
+
 }
 
 

@@ -21,7 +21,7 @@ public class TypDiagnostics {
         return typDiagnostics;
     }
 
-    public double getPrice() {
+    public double getPriceTypDiagnostics() {
         return priceTypDiagnostics;
     }
 

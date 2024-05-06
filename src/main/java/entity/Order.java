@@ -24,7 +24,7 @@ public class Order {
         this.clientCarsMap = clientCarsMap;
     }
 
-    public void addTypDiagnostics(Integer id, List<TypDiagnostics> diagnostics) {
+    public void addTypDiagnostics(List<TypDiagnostics> diagnostics) {
         typDiagnostics.put(id, diagnostics);
     }
 
