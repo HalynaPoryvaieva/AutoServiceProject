@@ -32,7 +32,7 @@ public class Order {
         typDiagnostics.remove(id);
     }
 
-    public void addRepairWorks(Integer id,List<RepairWorks>works) {
+    public void addRepairWorks(Integer id) {
         repairWorks.put(id, works);
     }
 

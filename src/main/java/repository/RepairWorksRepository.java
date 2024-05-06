@@ -9,6 +9,7 @@ public class RepairWorksRepository implements CrudObject<Integer, RepairWorks> {
 
     private Map<Integer, RepairWorks> repairWorksMap;
 
+
     public RepairWorksRepository() {
         repairWorksMap = new HashMap<>();
     }

@@ -33,9 +33,6 @@ public class TypDiagmosticsServise  {
         return false;
     }
 
-    public TypDiagnostics get(int numberDiagnostics){
-        return  repository.get(numberDiagnostics);
-    }
 
     public void findAll(){
         repository.findAll().forEach(System.out::println);

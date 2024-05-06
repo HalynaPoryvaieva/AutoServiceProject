@@ -41,8 +41,8 @@ public class OrderServise {
         return orderRepository.findAll().stream().toList();
     }
 
-    public void addOderTypDiagnostics(Order order,int numberDiagnostics,List<TypDiagnostics> typDiagnostics){
-        order.addTypDiagnostics(typDiagnostics);
+    public void addOderTypDiagnostics(Order order, List<TypDiagnostics> diagnostics){
+        order.addTypDiagnostics(diagnostics);
     }
 
     public void addOrderRepairWorks(Order order,int numberRepairWorks,List<RepairWorks> works){

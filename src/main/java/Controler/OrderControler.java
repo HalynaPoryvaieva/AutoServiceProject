@@ -1,6 +1,8 @@
 package Controler;
 
 import entity.*;
+import repository.RepairWorksRepository;
+import repository.TypDiagmosticsRepository;
 import servise.*;
 
 import java.util.List;
@@ -55,8 +57,10 @@ public class OrderControler {
 
     private void orderItemController(int orderId) {
         Order order = orderServise.getOrder(orderId);
-        TypDiagnostics typDiagnostics;
-        RepairWorks repairWorks;
+        TypDiagnostics typDiagmostic;
+        TypDiagmosticsRepository typDiagmosticsRepository =new TypDiagmosticsRepository();
+        List<TypDiagnostics>typDiagnostics = null;
+        RepairWorksRepository repairWorks;
         char str;
         do {
             System.out.println("Order item:add [t]ypDiagnostics,add [r]epairWorks, t[o]talPrice , [p]rint, [b]ack:");
@@ -64,14 +68,18 @@ public class OrderControler {
             switch (str) {
                 case 't':
                     System.out.println("Order item: add typDiagnostics:");
-                    orderServise.addOderTypDiagnostics(order, typDiagnostics.getNumberDiagnostics());
+                    int numberDiagnostics=scanner.nextInt();
+                    typDiagnostics.add(typDiagmosticsRepository.get(numberDiagnostics));
+                    orderServise.addOderTypDiagnostics(order,typDiagnostics);
+
                     break;
                 case 'r':
                     System.out.println("Order item: add repairWorks:");
+                    int
                     orderServise.addOrderRepairWorks(order, repairWorks.getNumberRepairWorks());
                     break;
                 case 'o':
-                    double priceTypDiagnostics = typDiagnostics.getPriceTypDiagnostics();
+                    double priceTypDiagnostics = typDiagmostic
                     double priceRepairWorks = repairWorks.getPriceRepairWorks();
                     double totalPrice = priceTypDiagnostics + priceRepairWorks;
                     System.out.println("Amount for diagnostics:" + priceTypDiagnostics);

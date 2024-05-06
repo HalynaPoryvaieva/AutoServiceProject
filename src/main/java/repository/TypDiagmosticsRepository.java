@@ -50,4 +50,8 @@ public class TypDiagmosticsRepository implements CrudObject<Integer, TypDiagnost
         typDiagnosticsMap = typDiagnostic.stream().collect(Collectors.toMap(p -> p.getNumberDiagnostics(), p -> p));
 
     }
+    public TypDiagnostics get(int numberDiagnostics){
+        return  typDiagnosticsMap.get(numberDiagnostics);
+    }
+
 }
