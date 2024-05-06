@@ -4,13 +4,13 @@ public class TypDiagnostics {
     private int numberDiagnostics;
     private String typDiagnostics;
 
-    private double price;
+    private double priceTypDiagnostics;
     private static int numberDiagnosticsCount=0;
 
-    public TypDiagnostics(int numberDiagnostics, String typDiagnostics, double price) {
+    public TypDiagnostics(int numberDiagnostics, String typDiagnostics, double priceTypDiagnostics) {
         this.numberDiagnostics = ++numberDiagnostics;
         this.typDiagnostics = typDiagnostics;
-        this.price = price;
+        this.priceTypDiagnostics = priceTypDiagnostics;
     }
 
     public int getNumberDiagnostics() {
@@ -22,7 +22,7 @@ public class TypDiagnostics {
     }
 
     public double getPrice() {
-        return price;
+        return priceTypDiagnostics;
     }
 
     public void setNumberDiagnostics(int numberDiagnostics) {
@@ -34,7 +34,7 @@ public class TypDiagnostics {
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        this.priceTypDiagnostics = priceTypDiagnostics;
     }
 
     @Override
@@ -42,12 +42,12 @@ public class TypDiagnostics {
         return "TypDiagnostics{" +
                 "numberDiagnostics=" + this.numberDiagnostics +
                 ", typDiagnostics='" + this.typDiagnostics + '\'' +
-                ", price=" + this.price +
+                ", price=" + this.priceTypDiagnostics +
                 '}';
     }
 
     public void update(String typDiagnostics, double price) {
         this.typDiagnostics = typDiagnostics;
-        this.price = price;
+        this.priceTypDiagnostics = priceTypDiagnostics;
     }
 }

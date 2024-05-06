@@ -5,15 +5,15 @@ public class RepairWorks {
     private String typRepairWorks;
     private String groupRepairWorks;
     private double timeExecution;
-    private double price;
+    private double priceRepairWorks;
     private static int numberRepairWorksCount=0;
 
-    public RepairWorks(int numberRepairWorks, String typRepairWorks, String groupRepairWorks, double timeExecution, double price) {
+    public RepairWorks(int numberRepairWorks, String typRepairWorks, String groupRepairWorks, double timeExecution, double priceRepairWorks) {
         this.numberRepairWorks = numberRepairWorks;
         this.typRepairWorks = typRepairWorks;
         this.groupRepairWorks = groupRepairWorks;
         this.timeExecution = timeExecution;
-        this.price = price;
+        this.priceRepairWorks = priceRepairWorks;
     }
 
     public int getNumberRepairWorks() {
@@ -33,7 +33,7 @@ public class RepairWorks {
     }
 
     public double getPrice() {
-        return price;
+        return priceRepairWorks;
     }
 
     public void setNumberRepairWorks(int numberRepairWorks) {
@@ -53,7 +53,7 @@ public class RepairWorks {
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        this.priceRepairWorks = price;
     }
 
     @Override
@@ -63,7 +63,7 @@ public class RepairWorks {
                 ", typRepairWorks='" + this.typRepairWorks + '\'' +
                 ", groupRepairWorks='" + this.groupRepairWorks + '\'' +
                 ", timeExecution=" + this.timeExecution +
-                ", price=" + this.price +
+                ", price=" + this.priceRepairWorks +
                 '}';
     }
 }

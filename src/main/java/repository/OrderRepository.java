@@ -37,7 +37,7 @@ public class OrderRepository implements CrudObject<Integer, Order> {
     }
 
 
-//    public void add(Client client, Car car) {
-//        return orderMap.put(client,car);
-//    }
+    public void add(Client client, Car car) {
+        return orderMap.put(client,car);
+    }
 }
