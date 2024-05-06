@@ -1,6 +1,7 @@
 package servise;
 
 import entity.*;
+import repository.ClientRepository;
 import repository.OrderRepository;
 
 import java.util.List;
@@ -9,6 +10,9 @@ import java.util.Scanner;
 public class OrderServise {
 
     private OrderRepository orderRepository;
+    private ClientServise clientServise;
+
+    private CarServise carServise;
 
 
     public OrderServise(OrderRepository orderRepository) {
@@ -17,34 +21,36 @@ public class OrderServise {
 
     public void addOrder(Client client, Car car) {
         orderRepository.add(client, car);
+        clientServise.add(client);
+        carServise.add(car);
     }
 
-//    public OrderServise getOrder(int id) {
-//        return orderRepository.findAll(id);
-//    }
+    public Order getOrder(int id) {
+        return orderRepository.get(id);
+    }
 
-//    public boolean deleteOrder(int id) {
-//        Order delOrder = orderRepository.findAll(id);
-//        if (delOrder != null) {
-//            orderRepository.delete(id);
-//            return true;
-//        }
-//        return false;
-//    }
-//
-//    public List<OrderServise> getAllOrders() {
-//        return orderRepository.findAll();
-//    }
-//
-//    public void addOderTypDiagnostics(Order order, TypDiagnostics typDiagnostics){
-//        order.addTypDiagnostics(typDiagnostics);
-//    }
-//
-//    public void addOrderRepairWorks(Order order, RepairWorks repairWorks){
-//        order.addRepairWorks(repairWorks);
-//    }
+        public boolean deleteOrder(int id) {
+        Order delOrder = orderRepository.get(id);
+        if (delOrder != null) {
+            orderRepository.delete(id);
+            return true;
+        }
+        return false;
+    }
 
-    public void PaymentData(int priceTypDiagnostics,int priceRepairWorks){
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll().stream().toList();
+    }
+
+    public void addOderTypDiagnostics(Order order,int numberDiagnostics,TypDiagnostics typDiagnostics){
+        order.addTypDiagnostics(typDiagnostics);
+    }
+
+    public void addOrderRepairWorks(Order order,int numberRepairWorks,List<RepairWorks> works){
+        order.addRepairWorks(works);
+    }
+
+    public void PaymentData(int priceTypDiagnostics, int priceRepairWorks) {
 
         int totalPrice = priceTypDiagnostics + priceRepairWorks;
         System.out.println("Amount for diagnostics:" + priceTypDiagnostics);

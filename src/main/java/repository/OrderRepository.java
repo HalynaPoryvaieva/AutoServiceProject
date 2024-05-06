@@ -3,21 +3,25 @@ package repository;
 import entity.Car;
 import entity.Client;
 import entity.Order;
+import servise.OrderServise;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class OrderRepository implements CrudObject<Integer, Order> {
-    private Map<Integer,Order> orderMap;
+    private Map<Client,Car> orderMap;
+    private Map<Integer,Order> integerOrderMap;
 
     public OrderRepository(){
         orderMap=new HashMap<>();
+        integerOrderMap=new HashMap<>();
     }
 
     @Override
     public void add(Order value) {
-        orderMap.put(value.getId(),value);
+        integerOrderMap.put(value.getId(),value);
+
     }
 
     @Override
@@ -28,16 +32,21 @@ public class OrderRepository implements CrudObject<Integer, Order> {
 
     @Override
     public Order get(Integer key) {
-        return orderMap.get(key);
+        return integerOrderMap.get(key);
+    }
+
+    public Order getOrder(Client client) {
+        return integerOrderMap.get(client);
     }
 
     @Override
     public Collection<Order> findAll() {
-        return orderMap.values();
+        return integerOrderMap.values();
     }
 
 
     public void add(Client client, Car car) {
-        return orderMap.put(client,car);
+         orderMap.put(client,car);
     }
+
 }

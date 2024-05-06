@@ -41,4 +41,7 @@ public class ClientServise {
         repository.findAll().forEach(System.out::println);
     }
 
+    public void add(Client client) {
+        repository.add(client);
+    }
 }

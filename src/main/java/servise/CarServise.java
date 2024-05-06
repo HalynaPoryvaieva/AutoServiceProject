@@ -51,4 +51,8 @@ public class CarServise {
         }
         return false;
     }
+
+    public void add(Car car) {
+        repository.add(car);
+    }
 }

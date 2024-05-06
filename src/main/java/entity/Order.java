@@ -32,7 +32,7 @@ public class Order {
         typDiagnostics.remove(id);
     }
 
-    public void addRepairWorks() {
+    public void addRepairWorks(Integer id,List<RepairWorks>works) {
         repairWorks.put(id, works);
     }
 
@@ -126,6 +126,14 @@ public class Order {
 
     public void setClientCarsMap(Map<Integer, List<Car>> clientCarsMap) {
         this.clientCarsMap = clientCarsMap;
+    }
+
+    public void addTypDiagnostics(TypDiagnostics typDiagnostics) {
+
+    }
+
+    public void addRepairWorks(List<RepairWorks> works) {
+
     }
 
     private class DateIntake {

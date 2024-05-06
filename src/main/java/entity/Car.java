@@ -1,6 +1,7 @@
 package entity;
 
 public class Car {
+    private int idClient;
     private int idCar;
     private String brand;
     private String model;
@@ -10,14 +11,15 @@ public class Car {
     private PropertyType propertyType;
    private static int idCarCounter=0;
 
-    public Car(int idCar, String brand, String model, int yearOfIssue, String VINcode, int dateRegistrationCar) {
-        this.idCar = ++idCarCounter;
+    public Car(int idClient, int idCar, String brand, String model, int yearOfIssue, String VINcode, int dateRegistrationCar, PropertyType propertyType) {
+        this.idClient = idClient;
+        this.idCar = ++idCar;
         this.brand = brand;
         this.model = model;
         this.yearOfIssue = yearOfIssue;
         this.VINcode = VINcode;
         this.dateRegistrationCar = dateRegistrationCar;
-        this.propertyType=propertyType;
+        this.propertyType = propertyType;
     }
 
     public PropertyType getPropertyType() {
