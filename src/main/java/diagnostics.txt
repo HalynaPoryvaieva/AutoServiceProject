@@ -1,0 +1,8 @@
+           1. "Checking the engine", 25;
+           2. "Automatic transmission and manual transmission", 25;
+           3. "Brake system", 15);
+           4. "Suspension", 15;
+           5. "Optics", 20;
+           6. "Electrical supply", 20;
+           7. "Security systems", 30;
+           8. "Comprehensive diagnostics:all 7 points", 150;

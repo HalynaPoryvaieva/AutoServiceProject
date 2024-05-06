@@ -3,8 +3,9 @@ package repository;
 import entity.TypDiagnostics;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
-public class TypDiagmosticsRepository implements RegistrationObject<Integer, TypDiagnostics> {
+public class TypDiagmosticsRepository implements CrudObject<Integer, TypDiagnostics> {
 
     private Map<Integer, TypDiagnostics> typDiagnosticsMap;
 
@@ -17,21 +18,10 @@ public class TypDiagmosticsRepository implements RegistrationObject<Integer, Typ
         typDiagnosticsMap.put(value.getNumberDiagnostics(), value);
     }
 
-//TODO
     @Override
-    public void update(Integer key, TypDiagnostics value) {
-        typDiagnosticsMap.compute(value.getNumberDiagnostics(), (number, newTypDiagnostics) -> {
-            if (newTypDiagnostics != null) {
-                return value;
-            } else {
-                return value;
-            }
-        });
-    }
-
-    @Override
-    public void delete(Integer key) {
+    public boolean delete(Integer key) {
         typDiagnosticsMap.remove(key);
+        return false;
     }
 
     @Override
@@ -55,6 +45,9 @@ public class TypDiagmosticsRepository implements RegistrationObject<Integer, Typ
                 new TypDiagnostics(6, "Electrical supply", 20),
                 new TypDiagnostics(7, "Security systems", 30),
                 new TypDiagnostics(8, "Comprehensive diagnostics:all 7 points", 150)));
+
+        // typDiagnostic.forEach(d -> typDiagnosticsMap.put(d.getNumberDiagnostics(),d));
+        typDiagnosticsMap = typDiagnostic.stream().collect(Collectors.toMap(p -> p.getNumberDiagnostics(), p -> p));
 
     }
 }

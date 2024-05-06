@@ -77,4 +77,12 @@ public class Client {
                 ", idClient=" + idClient +
                 '}';
     }
+
+    public void update(String name, String surname, int phone, String adresse, int dateRegistrationClient) {
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
+        this.adresse = adresse;
+        this.dateRegistrationClient = dateRegistrationClient;
+    }
 }

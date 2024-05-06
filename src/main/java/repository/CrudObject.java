@@ -2,10 +2,9 @@ package repository;
 
 import java.util.Collection;
 
-public interface RegistrationObject<ID,T> {
+public interface CrudObject<ID,T> {
     void add(T value);
-    void update(ID key, T value);
-    void delete(ID key);
+    boolean delete(ID key);
     T get(ID key);
     Collection<T> findAll();
 }

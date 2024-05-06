@@ -3,6 +3,7 @@ package entity;
 public class TypDiagnostics {
     private int numberDiagnostics;
     private String typDiagnostics;
+
     private double price;
     private static int numberDiagnosticsCount=0;
 
@@ -43,5 +44,10 @@ public class TypDiagnostics {
                 ", typDiagnostics='" + this.typDiagnostics + '\'' +
                 ", price=" + this.price +
                 '}';
+    }
+
+    public void update(String typDiagnostics, double price) {
+        this.typDiagnostics = typDiagnostics;
+        this.price = price;
     }
 }

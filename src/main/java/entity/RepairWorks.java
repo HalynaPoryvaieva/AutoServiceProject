@@ -3,13 +3,15 @@ package entity;
 public class RepairWorks {
     private int numberRepairWorks;
     private String typRepairWorks;
+    private String groupRepairWorks;
     private double timeExecution;
     private double price;
     private static int numberRepairWorksCount=0;
 
-    public RepairWorks(int numberRepairWorks, String typRepairWorks, int timeExecution, double price) {
-        this.numberRepairWorks = ++numberRepairWorks;
+    public RepairWorks(int numberRepairWorks, String typRepairWorks, String groupRepairWorks, double timeExecution, double price) {
+        this.numberRepairWorks = numberRepairWorks;
         this.typRepairWorks = typRepairWorks;
+        this.groupRepairWorks = groupRepairWorks;
         this.timeExecution = timeExecution;
         this.price = price;
     }
@@ -20,6 +22,10 @@ public class RepairWorks {
 
     public String getTypRepairWorks() {
         return typRepairWorks;
+    }
+
+    public String getGroupRepairWorks() {
+        return groupRepairWorks;
     }
 
     public double getTimeExecution() {
@@ -38,6 +44,10 @@ public class RepairWorks {
         this.typRepairWorks = typRepairWorks;
     }
 
+    public void setGroupRepairWorks(String groupRepairWorks) {
+        this.groupRepairWorks = groupRepairWorks;
+    }
+
     public void setTimeExecution(double timeExecution) {
         this.timeExecution = timeExecution;
     }
@@ -51,6 +61,7 @@ public class RepairWorks {
         return "RepairWorks{" +
                 "numberRepairWorks=" + this.numberRepairWorks +
                 ", typRepairWorks='" + this.typRepairWorks + '\'' +
+                ", groupRepairWorks='" + this.groupRepairWorks + '\'' +
                 ", timeExecution=" + this.timeExecution +
                 ", price=" + this.price +
                 '}';
